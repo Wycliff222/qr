@@ -1,0 +1,40 @@
+<html>
+     const express= require ("express")
+    const bodyparser= require ("body-parser");
+    const{pool}=require ("pg");
+    const app = express();
+    const pool = new pool ({
+        user: 'postgres',
+        host: 'localhost',
+        database: 'attendance_db',
+        password: 'yourpassword',
+        port: 1234,
+    });
+    // mark attendance
+    app.post(`/mark-attendance',async(req,res)=> {
+    cont{student id, section_id} =req.body;
+    await pool.query(
+    'insert into attendance (student_id, session_id status) values(1,2,3)`,);
+    res.json({message:`attendance marked successfuly!`});
+    // view records
+    app.get(`/attendance-records`, async (req, res)=>
+    contresult = await pool.Query(`
+    select s.fullname, sec.session_name, a.ststus, a scan_time
+    from attendance
+    join students s on a.student_id =s.student_id
+    join session sec on a.session_id =sec . session_id
+    order by a.scan_time DESC
+    `);
+    app.listen(3000,() =>console .log('server running on port 3000'));
+
+
+
+
+    
+
+
+
+
+
+    
+

@@ -1,0 +1,20 @@
+   import React from "react";
+import StudentPortal from "./StudentPortal";
+import TraineePortal from "./TraineePortal";
+import AdminPortal from "./AdminPortal";
+
+function App() {
+  return (
+    <div>
+      <img src="/school.jpg" alt="School" style={{ width: "100%" }} />
+      <h1>QR Code Attendance System</h1>
+      <div style={{ display: "flex", justifyContent: "space-around" }}>
+        <StudentPortal />
+        <TraineePortal />
+        <AdminPortal />
+      </div>
+    </div>
+  );
+}
+
+export default App;
